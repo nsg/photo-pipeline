@@ -34,7 +34,7 @@ Plugins may require other plugins to be executed before them. For example a face
 
 ### Output Plugins
 
-These plugins will read the final payload from STDIN and write them to some place, it could be a image galley, a system directory or anything that the plugin supports.
+These plugins will read the final payload from STDIN and write them to some place, it could be a image galley, a system directory or anything that the plugin supports. Plugins should also echo out the payload to STDOUT for other plugins to consume.
 
 * [List of official output plugins](https://github.com/photo-channel?q="plugin-output")
 
