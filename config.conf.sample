@@ -4,5 +4,8 @@ SOURCE_PLUGINS=(
 
 PROCESS_PLUGINS=(
     ghcr.io/photo-channel/plugin-process-cat:master
-    ghcr.io/photo-channel/plugin-process-wc:master
+)
+
+OUTPUT_PLUGINS=(
+    ghcr.io/photo-channel/plugin-output-folder:master#/tmp/photo-channel
 )
