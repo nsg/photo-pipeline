@@ -22,7 +22,7 @@ process_pipeline() {
 }
 
 if [ x$1 == xprocess ]; then
-    cat - | process_pipeline 0
+    process_pipeline 0
 else
     for plugin in $SOURCE_PLUGINS; do
         image=${plugin%#*}
