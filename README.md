@@ -4,7 +4,7 @@ This project executes a sequence of plugins to process and classify photos with 
 
 ## How to use
 
-Rename `config.conf.sample` to `config.conf.sample` and choose what plugins you like to use. Now run `./photo-channel.sh` and wait. This process can take a long time if you have a lot of photos.
+Rename `config.conf.sample` to `config.conf` and choose what plugins you like to use. Now run `./photo-channel.sh` and wait. This process can take a long time if you have a lot of photos.
 
 ## Plugins
 

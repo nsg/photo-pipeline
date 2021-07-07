@@ -1,13 +1,6 @@
 #!/bin/bash
 
-SOURCE_PLUGINS=(
-    ghcr.io/photo-channel/plugin-source-folder:master#/home/nsg/Pictures/Dump-Pixel4-jan2021/Pictures/Spelkväll/
-)
-
-PROCESS_PLUGINS=(
-    ghcr.io/photo-channel/plugin-process-cat:master
-    ghcr.io/photo-channel/plugin-process-wc:master
-)
+. config.conf
 
 process_pipeline() {
     local total=${#PROCESS_PLUGINS[@]}
