@@ -1,12 +1,12 @@
 #!/bin/bash
 
 SOURCE_PLUGINS=(
-    pp/source/folder:latest#/home/nsg/Pictures/Dump-Pixel4-jan2021/Pictures/Spelkväll/
+    ghcr.io/photo-channel/plugin-source-folder:master#/home/nsg/Pictures/Dump-Pixel4-jan2021/Pictures/Spelkväll/
 )
 
 PROCESS_PLUGINS=(
-    pp/process/cat
-    pp/process/wc
+    ghcr.io/photo-channel/plugin-process-cat:master
+    ghcr.io/photo-channel/plugin-process-wc:master
 )
 
 process_pipeline() {
