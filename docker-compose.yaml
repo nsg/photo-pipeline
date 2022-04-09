@@ -1,0 +1,42 @@
+---
+
+version: "2"
+
+networks:
+  photo-channel:
+    driver: bridge
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0.14
+    ports:
+      - 1883:1883
+    networks:
+      - photo-channel
+    entrypoint: mosquitto -c /mosquitto-no-auth.conf
+
+  photo-channel:
+    build: .
+    networks:
+      - photo-channel
+    environment:
+      MQTT_SERVER: mosquitto
+      MQTT_TOPIC: photo-channel
+    depends_on:
+      - mosquitto
+
+  #
+  # Source plugins
+  #
+  
+  plugin-source-folder:
+    image: ghcr.io/photo-channel/plugin-source-folder:sha-bf7cb15
+    volumes:
+      - /mnt/pictures/:/import/
+    networks:
+      - photo-channel
+    environment:
+      MQTT_SERVER: mosquitto
+      MQTT_TOPIC: photo-channel
+    depends_on:
+      - photo-channel
